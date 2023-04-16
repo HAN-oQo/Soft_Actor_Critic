@@ -14,3 +14,4 @@ box2d
 moviepy
 pyyaml
 matplotlib
+termcolor
