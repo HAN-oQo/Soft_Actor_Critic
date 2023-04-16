@@ -1,0 +1,28 @@
+run_name: "SAC_LunarContinue"
+env: "LunarLanderContinuous-v2"
+n_episodes: 10000
+seed: 1234
+log_video: True
+log_every: 10
+save_every: 100
+max_episode_steps: 600 #200
+model_basedir: "./checkpoints"
+model_ckpt: ""
+
+optimizer: "Adam"
+learning_rate: 
+  policy: 0.0003
+  critic: 0.0003
+  alpha: 0.001
+
+log_std_min: -20
+log_std_max: 2
+init_alpha: 0.01
+discount: 0.99
+batch_size: 256 #32 #256 #1024 #256
+buffer_size: 100000
+start_size: 10000
+hidden_layer: 2
+hidden_units: 256
+non_linearity: "ReLU"
+target_smoothing_coefficient: 0.01

@@ -1,0 +1,28 @@
+run_name: "SAC_pendulum"
+env: "Pendulum-v1"
+n_episodes: 1500
+seed: 1234
+log_video: True
+log_every: 10
+save_every: 100
+max_episode_steps: 1000 #200
+model_basedir: "./checkpoints"
+model_ckpt: "./checkpoints/Pendulum-v1/SAC_pendulum/20230415234346/best_score.ckpt"
+
+optimizer: "Adam"
+learning_rate: 
+  policy: 0.001
+  critic: 0.001
+  alpha: 0.005
+
+log_std_min: -20
+log_std_max: 2
+init_alpha: 0.01
+discount: 0.98
+batch_size: 32 #256 #1024 #256
+buffer_size: 50000
+start_size: 10000
+hidden_layer: 2
+hidden_units: 128
+non_linearity: "ReLU"
+target_smoothing_coefficient: 0.005
